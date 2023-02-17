@@ -26,6 +26,6 @@ The goal of this assignment is to test knowledge of overloading operators.
     * = Assignment
     * == Equality
     * != Inequality
-    * \[\] Subscript
+    * \[] Subscript
 * In main.cpp test these new overloaded operators
 * Don't repeat yourself
