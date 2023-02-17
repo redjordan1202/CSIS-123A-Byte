@@ -14,7 +14,7 @@ This repository will show the changes of the byte class as functionality is adde
 # Assignments
 ##### This Repository starts at Assignment 5. 
 
-## [Assignment 5 - Operator Overloading](https://github.com/redjordan1202/CSIS-123A-Byte/commit/c707efdd7b88cd755a832567a93d4d03f69edb9c)
+## [Assignment 5 - Operator Overloading](https://github.com/redjordan1202/CSIS-123A-Byte/releases/tag/Assignment-5)
 The goal of this assignment is to test knowledge of overloading operators.
 ### Requirements:
 * Add the follow overload operators to the Byte class
