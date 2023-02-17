@@ -17,7 +17,7 @@ using std::string;
 using std::stringstream;
 using std::vector;
 
-int Byte::bitsToInt()
+int Byte::bitsToInt() const
 {
     int mask = 1;
     int bit = this->bits[0];
@@ -114,7 +114,7 @@ string Byte::toString()
     return str.str();
 }
 
-int Byte::toInt()
+int Byte::toInt() const
 {
     return this->bitsToInt();
 }
@@ -144,25 +144,25 @@ Byte Byte::div(int val)
     return Byte(total);
 }
 
-Byte Byte::add(Byte &val) 
+Byte Byte::add(const Byte &val) 
 {
     int total = this->toInt() + val.toInt();
     return Byte(total);
 }
 
-Byte Byte::sub(Byte &val) 
+Byte Byte::sub(const Byte &val) 
 {
     int total = this->toInt() - val.toInt();
     return Byte(total);
 }
 
-Byte Byte::mul(Byte &val) 
+Byte Byte::mul(const Byte &val) 
 {
     int total = this->toInt() * val.toInt();
     return Byte(total);
 }
 
-Byte Byte::div(Byte &val) 
+Byte Byte::div(const Byte &val) 
 {
     int total = this->toInt() / val.toInt();
     return Byte(total);
@@ -189,45 +189,37 @@ Byte Byte::operator /(int val)
     return this->div(val);
 }
 
-Byte Byte::operator +(Byte &val) 
+Byte Byte::operator +(const Byte &val) 
 {
     return this->add(val);
 }
 
-Byte Byte::operator -(Byte &val) 
+Byte Byte::operator -(const Byte &val) 
 {
     return this->sub(val);
 }
 
-Byte Byte::operator *(Byte &val) 
+Byte Byte::operator *(const Byte &val) 
 {
     return this->mul(val);
 }
 
-Byte Byte::operator /(Byte &val) 
+Byte Byte::operator /(const Byte &val) 
 {
     return this->div(val);
 }
 
 //Overload Assignment Operators
-Byte Byte::operator =(int val)
+Byte &Byte::operator =(int val)
 {
-    return Byte(val);
+    this->setValue(val);
+    return *this;
 }
 
-Byte Byte::operator =(int ar[8])
+Byte &Byte::operator =(const Byte &val)
 {
-    return Byte(ar);
-}
-
-Byte Byte::operator =(vector <int> vec)
-{
-    return Byte(vec);
-}
-
-Byte Byte::operator =(Byte &val)
-{
-    return Byte(val.toInt());
+    this->setValue(val.toInt());
+    return *this;
 }
 
 //Overloaded Equality Operators
@@ -239,7 +231,7 @@ bool Byte::operator ==(int val)
         return 0;
 }
 
-bool Byte::operator ==(Byte &val)
+bool Byte::operator ==(const Byte &val)
 {
     return(*this == val.toInt());
 }
@@ -249,7 +241,7 @@ bool Byte::operator !=(int val)
     return !(*this == val);
 }
 
-bool Byte::operator !=(Byte &val)
+bool Byte::operator !=(const Byte &val)
 {
     return !(*this == val);
 }

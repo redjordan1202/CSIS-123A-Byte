@@ -19,7 +19,7 @@ class Byte
 {
     private:
     vector <int> bits;
-    int bitsToInt();
+    int bitsToInt() const;
 
     public:
     //Constructors
@@ -32,39 +32,37 @@ class Byte
     void setValue(int value);
     int at(int index);
     string toString();
-    int toInt();
+    int toInt() const;
 
     //Arithmetic functions
     Byte add(int val);
     Byte sub(int val);
     Byte mul(int val);
     Byte div(int val);
-    Byte add(Byte &val);
-    Byte sub(Byte &val);
-    Byte mul(Byte &val); 
-    Byte div(Byte &val); 
+    Byte add(const Byte &val);
+    Byte sub(const Byte &val);
+    Byte mul(const Byte &val); 
+    Byte div(const Byte &val); 
 
     //Overloaded Arithmetic Operators
     Byte operator +(int val); 
     Byte operator -(int val); 
     Byte operator *(int val); 
     Byte operator /(int val);
-    Byte operator +(Byte &val); 
-    Byte operator -(Byte &val); 
-    Byte operator *(Byte &val); 
-    Byte operator /(Byte &val);
+    Byte operator +(const Byte &val); 
+    Byte operator -(const Byte &val); 
+    Byte operator *(const Byte &val); 
+    Byte operator /(const Byte &val);
 
     //Overload Assignment Operators
-    Byte operator =(int val);
-    Byte operator =(int ar[8]);
-    Byte operator =(vector <int> vec);
-    Byte operator =(Byte &val);
+    Byte &operator =(int val);
+    Byte &operator =(const Byte &val);
 
     //Overloaded Equality Operators
     bool operator ==(int val);
-    bool operator ==(Byte &val);
+    bool operator ==(const Byte &val);
     bool operator !=(int val);
-    bool operator !=(Byte &val);
+    bool operator !=(const Byte &val);
 
     //Overload Subscript Operator 
     int operator [](int index);
