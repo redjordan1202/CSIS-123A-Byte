@@ -1,6 +1,6 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #4
+Assignment #5
 byte.cpp
 CPP file for Byte class
 Updated to add overloaded operators. cleaned up code a little bit
