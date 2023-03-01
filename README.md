@@ -28,3 +28,11 @@ The goal of this assignment is to test knowledge of overloading operators.
     * \[] Subscript
 * In main.cpp test these new overloaded operators
 * Don't repeat yourself
+
+## [Assignment 6 - More Complex Types](https://github.com/redjordan1202/CSIS-123A-Byte/releases/tag/Assignment-6)
+
+Use the Menu class to test function of overloaded operators added to the Byte class in the prior.
+
+### Requirements
+* Create functions to test overloaded operators in byte class
+* Add functions to menu using Menu class
