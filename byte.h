@@ -1,9 +1,9 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #5
+Assignment #6
 byte.h
 Header file for Byte class. 
-Added overloaded operators. Added some comments to clean up code a bit
+No changes needed for this assignment.
 */
 
 #ifndef BYTE

@@ -1,10 +1,12 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #5
+Assignment #6
 byte.cpp
 CPP file for Byte class
-Updated to add overloaded operators. cleaned up code a little bit
-bit.
+No updates were needed for the assignment, but I fixed a little
+bug/oversight in the int Byte constructor. If value used is over 255
+the byte will instead be assigned a value of 255 to avoid having to handle
+overflow values.
 */
 
 #include <iostream>
@@ -84,6 +86,8 @@ Byte::Byte(vector <int> vec)
 //Core Functions
 void Byte::setValue(int value)
 {
+    if(value > 255)
+        value = 255;
     int mask = 1;
     int result = 0;
 
