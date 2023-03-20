@@ -1,6 +1,6 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #6
+Assignment #7
 byte.h
 Header file for Byte class. 
 No changes needed for this assignment.

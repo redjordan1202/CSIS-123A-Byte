@@ -1,10 +1,8 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #6
+Assignment #7
 menu.cpp
 cpp file for Menu class
-Already previously updated to use vector instead of array
-to hold menu items.
 */
 
 #include <iostream>

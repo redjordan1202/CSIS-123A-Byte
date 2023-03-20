@@ -1,10 +1,8 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #6
+Assignment #7
 menu.h
 Header file for Menu class. 
-Menu class declaration. Was already updated before to use vector over
-array to hold menu items.
 */
 
 #ifndef MENU

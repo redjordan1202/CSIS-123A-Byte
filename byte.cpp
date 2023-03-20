@@ -1,12 +1,10 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #6
+Assignment #7
 byte.cpp
 CPP file for Byte class
-No updates were needed for the assignment, but I fixed a little
-bug/oversight in the int Byte constructor. If value used is over 255
-the byte will instead be assigned a value of 255 to avoid having to handle
-overflow values.
+No updates were needed for the assignment, but i found another bug that was causing issues with the default
+constructor. Fixed that for this assignment
 */
 
 #include <iostream>
@@ -44,7 +42,7 @@ int Byte::bitsToInt() const
 //Constructors
 Byte::Byte()
 {
-    Byte(0);
+    this->bits.resize(8, 0);
 }
 
 Byte::Byte(int val)
