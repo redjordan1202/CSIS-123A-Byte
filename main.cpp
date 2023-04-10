@@ -1,9 +1,8 @@
 /*
 Jordan Del Pilar ID 0701246
-Assignment #7
+Assignment #8
 main.cpp
-Changed to use dynamic memory allocation in the testing functions.
-Also added a function to test if the memory was properly allocated 
+Added new DelPilar namespace that includes the menu and byte classes
 */
 
 #include <iostream>
@@ -13,8 +12,9 @@ Also added a function to test if the memory was properly allocated
 #include "menu.h"
 
 using namespace std;
+using namespace DelPilar;
 
-Menu m; //Declaring Globally per assignment instructions
+
 
 //Function prototypes
 int getNum();
@@ -28,14 +28,16 @@ void checkNull(Byte b);
 
 int main()
 {
-    m.addMenu("1. Test Adding", addTest);
-    m.addMenu("2. Test Subtracting", subTest);
-    m.addMenu("3. Test Multiplying", mulTest);
-    m.addMenu("4. Test Dividing", divTest);
-    m.addMenu("5. Test Subscripting", indexTest);
-    m.addMenu("6. Exit", Exit);
+    Menu *m = Menu::Instance();
 
-    m.runMenu();
+    m->addMenu("1. Test Adding", addTest);
+    m->addMenu("2. Test Subtracting", subTest);
+    m->addMenu("3. Test Multiplying", mulTest);
+    m->addMenu("4. Test Dividing", divTest);
+    m->addMenu("5. Test Subscripting", indexTest);
+    m->addMenu("6. Exit", Exit);
+
+    m->runMenu();
 
     return 0;
 }
@@ -56,6 +58,7 @@ int getNum()
 
 void addTest()
 {
+    Menu *m = Menu::Instance();
     int num1, num2;
     cout << "Enter First Number: ";
     num1 = getNum();
@@ -83,12 +86,13 @@ void addTest()
     else    //Otherwise use regular arithmetic functions to give result
         cout << b1->toInt() << " plus " << b2->toInt() << " equals: "<< (b1->toInt() + b2->toInt()) << endl;
 
-    m.waitKey();
+    m->waitKey();
     delete b1, b2;
 }
 
 void subTest()
 {
+    Menu *m = Menu::Instance();
     int num1, num2;
     cout << "Enter First Number: ";
     num1 = getNum();
@@ -116,12 +120,13 @@ void subTest()
     else    //Otherwise use regular arithmetic functions to give result
         cout << b1->toInt() << " minus " << b2->toInt() << " equals: "<< (b1->toInt() - b2->toInt()) << endl;
 
-    m.waitKey();
+    m->waitKey();
     delete b1, b2;
 }
 
 void mulTest()
 {
+    Menu *m = Menu::Instance();
     int num1, num2;
     cout << "Enter First Number: ";
     num1 = getNum();
@@ -149,12 +154,13 @@ void mulTest()
     else 
         cout << b1->toInt() << " times " << b2->toInt() * b2->toInt() << endl;
 
-    m.waitKey();
+    m->waitKey();
     delete b1, b2;
 }
 
 void divTest()
 {
+    Menu *m = Menu::Instance();
     int num1, num2;
     cout << "Enter First Number: ";
     num1 = getNum();
@@ -182,12 +188,13 @@ void divTest()
     else 
         cout << b1->toInt() << " divided " << b2->toInt() << " equals: "<< (b1->toInt() / b2->toInt()) << endl;
 
-    m.waitKey();
+    m->waitKey();
     delete b1, b2;
 }
 
 void indexTest()
 {
+    Menu *m = Menu::Instance();
     int num;
     cout << "Enter value for byte: ";
     cin >> num;
@@ -200,7 +207,7 @@ void indexTest()
 
     cout << b1->operator[](num-1) << endl; //using arrow to operator [] seems to work for whatever reason when just [] doesn't
 
-    m.waitKey();
+    m->waitKey();
     delete b1;
 }
 
@@ -212,13 +219,12 @@ void Exit()
 
 void checkNull(Byte b)
 {
-
+    Menu *m = Menu::Instance();
     if(b == NULL)
         {
-            cout << "Unable to allocate memory for Byte object";
-            m.waitKey();
+            cout << "Unable to allocate memory for Byte object\n";
+            m->waitKey();
             return;
         }
-
 }
 
